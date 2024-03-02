@@ -52,7 +52,7 @@ const Main = () => {
   );
 
   return (
-    <div className="search-page">
+    <div className="page">
       <form>
         <button
           className="button"

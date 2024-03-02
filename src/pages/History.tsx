@@ -62,7 +62,7 @@ const History = () => {
   );
 
   return (
-    <div>
+    <div className="page">
       <div className="history-search-term-buttons-container">
         {searchTerms.map((term: string, index) =>
           term.length ? (
