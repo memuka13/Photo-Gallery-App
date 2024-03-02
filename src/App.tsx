@@ -23,7 +23,17 @@ const App = () => {
         <PhotoSearchContext.Provider value={PhotoSearch}>
           <QueryClientProvider client={queryClient}>
             <header>
-              <Link to="/">Photo Search App</Link>
+              <Link
+                to="/"
+                onClick={() => [
+                  window.scrollTo({
+                    top: 0,
+                    behavior: "smooth",
+                  }),
+                ]}
+              >
+                Photo Search App
+              </Link>
             </header>
             <Routes>
               <Route path="/history" element={<HistoryErrorBoundary />} />
