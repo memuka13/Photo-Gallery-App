@@ -5,6 +5,11 @@ const Results = ({ photos }) => {
   const [showModal, setShowModal] = useState(false);
   const [selectedImage, setSelectedImage] = useState(null);
 
+  const closeModal = () => {
+    setSelectedImage(null);
+    setShowModal(false);
+  };
+
   return (
     <div className="searchResults">
       {!photos.length || !photos[0] ? (
@@ -23,12 +28,18 @@ const Results = ({ photos }) => {
 
               {showModal ? (
                 <Modal open={showModal}>
+                  <button
+                    onClick={() => {
+                      closeModal();
+                    }}
+                  >
+                    Back
+                  </button>
                   <div className="container">
                     <img
                       src={selectedImage.urls.full}
                       onClick={() => {
-                        setSelectedImage(null);
-                        setShowModal(false);
+                        closeModal();
                       }}
                     />
                     <div>Likes: {selectedImage.likes}</div>
